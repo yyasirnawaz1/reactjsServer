@@ -3,6 +3,7 @@ const express = require('express');
 const chalk = require('chalk');
 
 const courseRoutes = require('./routes/coursesRoutes');
+const booksRoutes = require('./routes/booksRoutes');
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.get('/url', (req, res, next) => {
 // });
 
 app.use('/courses', courseRoutes);
+app.use('/books', booksRoutes);
 
 app.listen(3001, () => {
   console.log(chalk.green('application is running.....'));
